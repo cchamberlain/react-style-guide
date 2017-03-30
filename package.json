@@ -15,7 +15,7 @@
   "dependencies": {
     "babel-runtime": "^6.23.0",
     "highlight.js": "^9.0.0",
-    "react-element-to-jsx-string": "^6.0.0",
+    "react-element-to-jsx-string-compat": "^6.0.0",
     "slugify": "^1.0.0"
   },
   "devDependencies": {

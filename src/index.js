@@ -1,5 +1,5 @@
 import React from "react";
-import reactElementToJsxString from "react-element-to-jsx-string";
+import reactElementToJsxString from "react-element-to-jsx-string-compat";
 import slugify from "slugify";
 import hl from "highlight.js/lib/highlight.js";
 import xml from "highlight.js/lib/languages/xml";
