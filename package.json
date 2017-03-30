@@ -1,33 +1,41 @@
 {
-  "name": "react-style-guide",
+  "name": "react-style-guide-modern",
   "version": "1.1.8",
-  "main": "index.js",
-  "scripts": {
-    "example": "webpack-dev-server --config webpack.config.js --no-info --content-base example/",
-    "build-example": "webpack --config webpack.config.js --no-info --content-base example/"
-  },
+  "main": "lib/index.js",
   "author": "Alex Lande",
+  "contributors": [
+    "Cole Chamberlain"
+  ],
   "license": "MIT",
+  "scripts": {
+    "prebuild": "rimraf lib",
+    "build": "babel src -d lib",
+    "release": "npm run build && npm version patch && npm publish"
+  },
   "dependencies": {
-    "highlight.js": "^8.4.0",
-    "react-to-jsx": "cchamberlain/react-to-jsx",
-    "slugify": "^0.1.0"
+    "highlight.js": "^9.0.0",
+    "react-element-to-jsx-string": "^6.0.0",
+    "slugify": "^1.0.0"
   },
   "devDependencies": {
-    "jsx-loader": "^0.13.2",
-    "webpack": "^1.5.3",
-    "webpack-dev-server": "^1.7.0"
+    "babel-cli": "^6.24.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-1": "^6.22.0",
+    "rimraf": "^2.6.1"
   },
   "peerDependencies": {
     "react": "^15.0.0"
   },
-  "description": "A component to display React components with their JSX source in style guides",
-  "directories": {
-    "example": "example"
+  "babel": {
+    "presets": [
+      "stage-1",
+      "react"
+    ]
   },
+  "description": "A component to display React components with their JSX source in style guides",
   "repository": {
     "type": "git",
-    "url": "https://github.com/alexlande/react-style-guide"
+    "url": "https://github.com/cchamberlain/react-style-guide"
   },
   "keywords": [
     "react",

@@ -1,5 +1,7 @@
 # React Style Guide
 
+**This is a fork that brings the dependencies up to React 15 and fixes compatibility.**
+
 A simple React component for building living style guides with React. Check out the [example](http://www.alexlande.com/react-style-guide/).
 
 ## Features
