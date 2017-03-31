@@ -1,6 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
-//import reactElementToJsxString from "react-element-to-jsx-string-compat";
 import slugify from "slugify";
 import hl from "highlight.js/lib/highlight.js";
 import xml from "highlight.js/lib/languages/xml";
@@ -11,7 +9,7 @@ function highlightMarkup (markup) {
   return hl.highlightAuto(markup).value;
 }
 
-export class StyleGuideItem extends React.Component {
+export default class StyleGuideItem extends React.Component {
   static propTypes = {
     // Content
     title: React.PropTypes.string,
