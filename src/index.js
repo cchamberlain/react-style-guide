@@ -121,21 +121,22 @@ export class StyleGuideItem extends React.Component {
     );
   };
 
-  renderMarkup = (markup) => {
+  renderMarkup = () => {
     if (this.props.expandingMarkup && !this.state.markupExpanded) return null;
+    if(!this.props.staticMarkup) return null;
 
     if (this.props.highlighter) {
       return (
         <pre 
           className={this.props.markupClass} 
-          dangerouslySetInnerHTML={{__html: this.props.highlighter(markup)}}
+          dangerouslySetInnerHTML={{__html: this.props.highlighter(this.props.staticMarkup)}}
         />
       );
     }
 
     return (
       <pre className={this.props.markupClass}>
-        {markup}
+        {this.props.staticMarkup}
       </pre>
     );
   };
@@ -157,8 +158,6 @@ export class StyleGuideItem extends React.Component {
   };
 
   render () {
-    //const markup = this.props.staticMarkup || reactElementToJsxString(this.props.children);
-    const markup = this.props.staticMarkup || (this.props.children ? this.props.children.toString() : "N/A");
 
     return (
       <div className={this.props.componentClass}>
@@ -167,7 +166,7 @@ export class StyleGuideItem extends React.Component {
         <div className={this.props.exampleClass}>
           {this.props.children}
         </div>
-        {this.renderMarkup(markup)}
+        {this.renderMarkup()}
         {this.renderExpander()}
       </div>
     );
