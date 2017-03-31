@@ -1,5 +1,6 @@
 import React from "react";
-import reactElementToJsxString from "react-element-to-jsx-string-compat";
+import ReactDOM from "react-dom";
+//import reactElementToJsxString from "react-element-to-jsx-string-compat";
 import slugify from "slugify";
 import hl from "highlight.js/lib/highlight.js";
 import xml from "highlight.js/lib/languages/xml";
@@ -156,7 +157,8 @@ export class StyleGuideItem extends React.Component {
   };
 
   render () {
-    const markup = this.props.staticMarkup || reactElementToJsxString(this.props.children);
+    //const markup = this.props.staticMarkup || reactElementToJsxString(this.props.children);
+    const markup = this.props.staticMarkup || (this.props.children ? this.props.children.toString() : "N/A");
 
     return (
       <div className={this.props.componentClass}>
