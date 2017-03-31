@@ -10,7 +10,7 @@ function highlightMarkup (markup) {
   return hl.highlightAuto(markup).value;
 }
 
-export default class StyleGuideItem extends React.Component {
+export class StyleGuideItem extends React.Component {
   static propTypes = {
     // Content
     title: React.PropTypes.string,

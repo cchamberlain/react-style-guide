@@ -1,5 +1,5 @@
 {
-  "name": "react-style-guide-modern",
+  "name": "react-style-guide-item",
   "version": "1.1.16",
   "main": "lib/index.js",
   "author": "Alex Lande",
@@ -37,8 +37,6 @@
       "react"
     ],
     "plugins": [
-      "transform-runtime",
-      "transform-es2015-modules-commonjs"
     ]
   },
   "description": "A component to display React components with their JSX source in style guides",
